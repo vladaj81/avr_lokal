@@ -1,0 +1,531 @@
+* {
+	font: 10pt Arial, Helvetica, sans-serif;
+}
+
+body {
+	background-color: #f2f4f9;
+	margin-top: 5px;
+	cursor: default;
+}
+
+#pretraga {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+#container {
+	display: block;
+	position: relative;
+	width: 100%;
+}
+
+#okolog {
+	display: block;
+	position: relative;
+	background-image: url('../images/icg/tb2_m.gif');
+	width: 98%;
+	margin-left: 1%;
+	margin-right: 1%;
+	text-align: left;
+	min-height: 27px;
+	background-size: contain;
+}
+
+#okolog img.desno, #okolod img.desno {
+	display: block;
+	right: 0px;
+	position: absolute;
+	margin-right: -1%;
+}
+
+#okolog img.desno {
+	height: 27px;
+}
+
+#okolog img.levo {
+	display: block;
+	left: 0px;
+	position: absolute;
+	margin-left: -1%;
+	z-index: 1500 !important;
+	height: 27px;
+}
+
+#okolod {
+	display: block;
+	position: relative;
+	background-image: url('../images/icg/tb1_m.gif');
+	width: 98%;
+	height: 22px;
+	margin-left: 1%;
+	margin-right: 1%;
+}
+
+#okolod img.levo {
+	display: block;
+	left: 0px;
+	position: absolute;
+	margin-left: -1%;
+}
+
+#natpis {
+	color: #FF6500;
+	font-size: 11pt;
+	font-weight: bold;
+	padding-left: 22px;
+	z-index: 2000 !important;
+	position: absolute;
+	margin-top: 5px;
+}
+
+#content {
+	display: block;
+	position: relative;
+	background-color: #fff;
+	width: 100%;
+	z-index: 2000 !important;
+	overflow: auto;
+	border-left: 1px solid silver;
+	border-right: 1px solid silver;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;
+	padding-bottom: 15px;
+}
+
+.pocetni_wrapper {
+	display: flex;
+}
+
+#trazi_podatke {
+	margin-top: 20px;
+	margin-left: 50px;
+	width: 52%;
+	float: 1;
+}
+
+.tabovi {
+	display: none;
+	width: 45%;
+	height: 60px;
+	margin: 20px 50px 0 82px;
+}
+/*
+#prvi_tab,
+#drugi_tab {
+	display: none;
+}
+*/
+.dugme_tab {
+	cursor:pointer; 
+	padding:6px;
+	border:1px solid #ccc;
+	border-radius: 3px;
+}
+
+.active {
+	color: #fff;
+	border-color: #0066ff;
+	background-color:#0066ff;
+}
+
+.hr_tabovi {
+	margin-top: 15px;
+	width: 100%;
+	height: 1px;
+	border: none;
+	background-color: #bfbfbf;
+}
+
+[disabled] {
+	color: #000000;
+}
+
+#posalji_datum, 
+#obracunaj,
+#povratak {
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #0066ff;
+	color: white;
+	background-color:#0066ff;
+	font-weight: 600;
+	margin-left: 20px;
+	transition: background-color .2s;
+}
+
+
+#export_excel {
+	display: none;
+	padding: 10px;
+	border-radius: 5px;
+	color: white;
+	font-weight: 600;
+	margin-left: 20px;
+	transition: background-color .2s;
+	cursor: pointer;
+	background-color: #5cb85c;
+	border: 1px solid #4cae4c;
+	border-radius: 3px;
+}
+
+
+.obracun {
+	display: none;
+	margin-left: 50px;
+	margin-right: 50px;
+	width: 50%;
+	justify-content: space-between;
+}
+
+.pretraga_pribava {
+	display: none;
+	margin-left: 50px;
+	margin-right: 50px;
+	justify-content: space-around;
+}
+
+.div_pretraga_pribava {
+
+	flex:1;
+}
+
+.div_pretraga_kljuc {
+	flex:2;
+	margin-left: 14%;
+}
+
+#obracunaj {
+	margin-left: 0;
+}
+
+.div_cekiraj_sve {
+	display: flex;
+	flex-direction: column;
+}
+
+.konta,
+.div_tab2 {
+	overflow-x: auto;
+	float: left;
+	width: 50%;
+}
+
+.prva_tabela {
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.tabela_konta,
+.tabela_pribava,
+.tabela_kljuc {
+	width: 100%;
+}
+
+.tabela_konta,
+.tabela_konta > tbody > tr > td, 
+.tabela_konta > thead > tr > th,
+.tabela_koeficijenti,
+.tabela_koeficijenti > tbody > tr > td,
+.tabela_pribava,
+.tabela_pribava > tbody > tr > td, 
+.tabela_pribava > thead > tr > th,
+.tabela_suma,
+.tabela_suma > tbody > tr > td, 
+.tabela_suma > thead > tr > th,
+.tabela_kljuc,
+.tabela_kljuc > tbody > tr > td, 
+.tabela_kljuc > thead > tr > th,
+.tabela_obracun_pribave,
+.tabela_obracun_pribave > tbody > tr > td, 
+.tabela_obracun_pribave > thead > tr > th, 
+.tabela_koef,
+.tabela_koef > tbody > tr > td, 
+.tabela_koef > thead > tr > th,
+.ukupni_obracun_avr,
+.ukupni_obracun_avr > tbody > tr > td, 
+.ukupni_obracun_avr > thead > tr > th {
+	padding: 5px;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+.tabela_konta > thead,
+.tabela_pribava > thead,
+.tabela_suma > thead,
+.tabela_kljuc > thead,
+.tabela_obracun_pribave > thead,
+.ukupni_obracun_avr > thead,
+.suma_sektori {
+	background-color: grey;
+	color: navy;
+	text-transform: uppercase;
+}
+
+.tabela_obracun_pribave > tbody > tr > td.pribava_centriraj {
+	text-align: center;
+}
+
+.tabela_obracun_pribave > tbody > tr > td.pribava_iznosi {
+	text-align: right;
+	padding: 8px 10px;
+}
+
+.tabela_konta > thead > tr > th, 
+.tabela_konta > tbody > tr > td,
+.tabela_pribava > thead > tr > th, 
+.tabela_pribava > tbody > tr > td,
+.tabela_kljuc > thead > tr > th, 
+.tabela_kljuc > tbody > tr > td,
+.ukupni_obracun_avr > thead > tr > th {
+	text-align: center;
+}
+
+.ukupni_obracun_avr > tbody > tr > td.prva_kolona {
+	text-align: center;
+}
+
+.ukupni_obracun_avr > tbody > tr > td.centriraj_desno {
+	text-align: right;
+}
+
+.tabela_kljuc > tbody > tr > td.kljuc_iznos {
+	text-align: right;
+}
+
+.tabela_kljuc > tbody > tr > td#suma_kljuc {
+	font-weight: 600;
+	background-color: #d9d9d9;
+}
+
+.tabela_suma > thead > tr > th, 
+.tabela_suma > tbody > tr > td  {
+	padding: 5px 15px;
+	text-align: center;
+}
+
+.tabela_suma > tbody > tr > td.druga_kolona {
+	text-align: right;
+}
+
+.total_vo {
+	color: navy;
+	background-color: grey;
+}
+
+.total,
+.total_avr {
+	background-color: #d9d9d9;
+	font-weight: 600;
+}
+
+.tabela_pribava > tbody > tr > td.pribava_iznos {
+	text-align: right;
+	font-weight: 600;
+}
+
+.tabela_koeficijenti,
+.tabela_koeficijenti > tbody > tr > td {
+	padding-left: 40px;
+	text-align: right;
+}
+
+.tabela_koeficijenti,
+.tabela_koeficijenti > tbody > tr > td.bold {
+	padding: 5px;
+	text-align: center;
+}
+
+.tabela_pribava > tbody > tr > td,
+.tabela_kljuc > tbody > tr > td {
+	padding: 10px;
+}
+
+
+.input_iznos,
+.polje_iznos,
+.grupe_pozadina,
+.siva_pozadina,
+.total_pozadina,
+.naziv_grupe,
+.bold {
+	font-weight: 600;
+}
+
+.tabela_koeficijenti > tbody > tr > td.suma_koef {
+
+	background-color: grey;
+	text-align: center;
+	text-transform: uppercase;
+	color: navy;
+	padding-left: 5px;
+}
+
+.poslednji_red>td.podebljaj {
+	font-weight: 600;
+	background-color: #bfbfbf;
+}
+
+/*VIDETI SA BANETOM ZA LETTER-SPACING
+.naziv_grupe,
+.grupe_pozadina,
+.siva_pozadina,
+.total_pozadina,
+.konacna_suma {
+	letter-spacing: 1px;
+}
+*/
+.tabela_konta > thead > tr > th {
+	font-size: 11pt;
+}
+
+.tabela_konta > tbody > tr > td.polje_iznos,
+.tabela_konta > tbody > tr > td.centriraj_brojeve,
+.input_iznos,
+.centriraj_iznos{
+	text-align: right;
+}
+
+#troskovi_po_mestu {
+	display: none;
+	height: 1600px;
+	/*margin: 50px 50px 0 50px;*/
+	float: left;
+	width: 42%;
+}
+
+.noseci_div{
+	margin-bottom: 30px;
+	display: flex;
+}
+
+.naslov_tabele {
+	flex: 1;
+}
+
+.naslov_troskovi {
+	font-size: 22px;
+	color: navy;
+}
+
+.div_dugme {
+	display: flex;
+	align-items: flex-end;
+}
+
+.grupe_pozadina {
+	background-color: #d9d9d9;
+}
+
+.siva_pozadina {
+	background-color: #bfbfbf;
+}
+
+.total_pozadina {
+	background-color: grey;
+}
+
+.tabela_koeficijenti {
+	margin-top: 30px;
+}
+
+.konacna_suma {
+	font-weight: 600;
+}
+
+.pribava_pocetna_wrapper {
+	height: 660px;
+	margin: 60px 50px 0 50px;
+	overflow-x: auto;
+	float: left;
+	width: 25%;
+}
+
+.suma_po_vo {
+	margin: 60px 50px 0 0;
+	float: left;
+}
+
+.troskovi_kljuc {
+	float: left;
+	overflow-x: auto;
+	width: 25%;
+}
+
+.pozadina_kljuc {
+	color: navy;
+	background-color: grey;
+}
+
+.obracun_pribave {
+	float: left;
+	width: 50px;
+}
+
+.tabela_koef {
+	width: 100%;
+}
+
+.sektor {
+	text-align: center;
+	font-weight: 600;
+}
+
+.suma_sektor,
+.ukupno_avr {
+	background-color: grey;
+	text-align: center;
+	color: navy;
+}
+
+.koef_desno {
+	text-align: right;
+}
+
+.avr_obracun {
+	width: 60%;
+	margin-left: 50px;
+}
+
+.loader_wrapper {
+	z-index: 7000;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	top: 40%;
+	left: 45%;
+	display: none;
+}
+
+.loader {
+	border: 16px solid #cccccc; /* Light grey */
+	border-top: 16px solid #0052cc; /* Blue */
+	border-radius: 50%;
+	width: 160px;
+	height: 160px;
+	animation: spin 2s linear infinite;
+	margin: 10px auto 0 auto;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 5000 !important; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+.loader_span {
+	font-size: 14px;
+	color: white;
+	margin: auto;
+}
